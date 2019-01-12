@@ -1,0 +1,18 @@
+[Unit]
+Description=play on tty1
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/pi/play.py
+ExecStop=/bin/kill -HUP $MAINPID
+StandardInput=tty
+StandardOutput=tty
+#StandardOutput=journal
+StandardError=journal
+WorkingDirectory=/home/pi
+TTYPath=/dev/tty1
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=getty.target
