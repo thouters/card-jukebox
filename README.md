@@ -25,12 +25,12 @@ The default login agetty process on the first video console is replaced with the
 1. place `play.py`, `play.service` in `/home/pi` (or a different location if you update play.service)
 2. run the following commands:
 
-    apt-get install sox alsamixer
-    sudo install -m 644 play.service /etc/systemd/system/play.service
-    sudo systemctl daemon-reload
-    sudo systemctl mask getty@tty1.service
-    sudo systemctl enable play.service
-    sudo systemctl start play.service
+       apt-get install sox alsamixer
+       sudo install -m 644 play.service /etc/systemd/system/play.service
+       sudo systemctl daemon-reload
+       sudo systemctl mask getty@tty1.service
+       sudo systemctl enable play.service
+       sudo systemctl start play.service
 
 3. use `raspi-config` to enable playback to jack
 4. use `alsamixer` to set an acceptable volume
